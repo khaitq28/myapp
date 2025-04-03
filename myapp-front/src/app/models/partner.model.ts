@@ -1,5 +1,6 @@
 export interface Partner {
 
+  id: number;
   alias: string;
   type: string;
   direction: PartnerDirection;

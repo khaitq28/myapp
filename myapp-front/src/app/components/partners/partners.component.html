@@ -1,1 +1,112 @@
-<p>partners works!</p>
+
+<mat-label><h3>List of Partners</h3></mat-label>
+<div>
+  <button mat-raised-button color="primary" (click)="openAddDialog()">
+    Add Partner
+  </button>
+</div>
+
+<table mat-table [dataSource]="partners" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="alias">
+    <th mat-header-cell *matHeaderCellDef> Alias </th>
+    <td mat-cell *matCellDef="let partner"> {{partner.alias}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef> Type </th>
+    <td mat-cell *matCellDef="let partner"> {{partner.type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="direction">
+    <th mat-header-cell *matHeaderCellDef> Direction </th>
+    <td mat-cell *matCellDef="let partner"> {{partner.direction}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="application">
+    <th mat-header-cell *matHeaderCellDef> Application </th>
+    <td mat-cell *matCellDef="let partner"> {{partner.application}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="processedFlowType">
+    <th mat-header-cell *matHeaderCellDef> PartnerFlowType </th>
+    <td mat-cell *matCellDef="let partner"> {{partner.processedFlowType}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Description </th>
+    <td mat-cell *matCellDef="let partner"> {{partner.description}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
+    <td mat-cell *matCellDef="let partner">
+      <button mat-icon-button color="warn" (click)="deletePartner(partner.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef = "displayedColumns"></tr>
+
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+</table>
+
+<div class="pagination-controls">
+  <button mat-button (click)="goToFirstPage()">First</button>
+  <mat-paginator [length]="totalElements"
+                 [pageSize]="pageSize"
+                 [pageSizeOptions]="[5, 10, 20]"
+                 (page)="onPageChange($event)">
+
+
+  </mat-paginator>
+  <button mat-button (click)="goToLastPage()">Last</button>
+</div>
+
+
+<ng-template #addPartnerDialog let-dialogRef="dialogRef" style="width: 200px;">
+  <h2 mat-dialog-title>Ajouter un partenaire</h2>
+  <mat-dialog-content [formGroup]="addPartnerForm" style="">
+    <mat-form-field>
+      <input matInput placeholder="Alias" formControlName="alias" required>
+      <mat-error *ngIf="addPartnerForm.get('alias')?.hasError('required')">
+        Required
+      </mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput placeholder="Type" formControlName="type" required>
+      <mat-error *ngIf="addPartnerForm.get('type')?.hasError('required')">
+        Required
+      </mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+      <mat-select placeholder="Direction" formControlName="direction">
+        <mat-option value="INBOUND">INBOUND</mat-option>
+        <mat-option value="OUTBOUND">OUTBOUND</mat-option>
+      </mat-select>
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput placeholder="Application" formControlName="application">
+    </mat-form-field><br>
+    <mat-form-field>
+      <mat-select placeholder="Processed Flow Type" formControlName="processedFlowType">
+        <mat-option value="MESSAGE">MESSAGE</mat-option>
+        <mat-option value="ALERTING">ALERTING</mat-option>
+        <mat-option value="NOTIFICATION">NOTIFICATION</mat-option>
+      </mat-select>
+    </mat-form-field><br>
+    <mat-form-field>
+      <textarea matInput placeholder="Description" formControlName="description"></textarea>
+      <mat-error *ngIf="addPartnerForm.get('description')?.hasError('required')">
+        Required
+      </mat-error>
+    </mat-form-field><br>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button (click)="dialogRef.close()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="savePartner()">Add</button>
+  </mat-dialog-actions>
+</ng-template>

@@ -1,6 +1,5 @@
-<p>messages component</p>
 
-
+<mat-label><h3>List of messages</h3></mat-label>
 <table mat-table [dataSource]="messages" class="mat-elevation-z8">
 
   <ng-container matColumnDef="id">
@@ -19,11 +18,23 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"
+      (click)="openMessageDetail(row)"></tr>
 
 </table>
 
-<mat-paginator [length]="totalElements"
-               [pageSize]="pageSize"
-               [pageSizeOptions]="[10, 25, 50, 100]">
-</mat-paginator>
+<div class="pagination-controls">
+  <button mat-button (click)="goToFirstPage()">First-page</button>
+  <mat-paginator [length]="totalElements"
+                 [pageSize]="pageSize"
+                 [pageSizeOptions]="[5, 10, 20, 50]"
+                 (page)="onPageChange($event)">
+
+
+
+  </mat-paginator>
+<!--  <button mat-button (click)="goToPage()">Go</button>-->
+  <button mat-button (click)="goToLastPage()">Last-page</button>
+</div>
+
