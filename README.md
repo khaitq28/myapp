@@ -16,7 +16,7 @@
      `docker-compose up`
 
 - Open the web app:  
-     `http://localhost:80/`
+     `http://localhost:80`
 - The backed API:
    
     `http://localhost:8080/home`
@@ -56,12 +56,10 @@ https://github.com/khaitq28/myapp/blob/main/myapp-back/src/main/java/com/tqk/mya
 
 - MessageService call saveAll to save the batch (1000 messages) to DB
 
-
 On the frontend side:
 - use pagination (for performance) to load messages
 - default sort by messageId
 - sort by partner Alias
-
 
 
 ##  Some points:
@@ -72,9 +70,8 @@ On the frontend side:
 - 5 thead for Thread Pool task
 - Interval of 1/10 second + Batch size of 1000 => can handle 10k message/s
 
-
-
 ##  Follow-up: (to improve more if needed)
+- add DTO, unit test, integration tests
 - use Index for createdAt column, (if we want to sort by createdAt date)
 - use cache for Partners data  (@Cacheable of Spring boot, or Redis if big scale application)
 - Test with real IBM MQ, and use real DB like Postgres (faster and more stable than H2DB)
@@ -84,7 +81,14 @@ On the frontend side:
   - RAM, CPU, memory... of Java app, and Database machine...
 
 If the message from queue is VERY BIG, some other solutions can consider:
-
 - use RabbitMQ and DeadLetter Queue to keep message in queue, and process it later
 - partition the database (by createdAt month/year, or by sender)
 - use multiple instances of app (scale auto) by K8S  to process messages
+
+## Screen:
+![Screenshot 2025-04-04 124325](https://github.com/user-attachments/assets/e2042950-2f24-430a-a4fc-df9f84105036)
+![Screenshot 2025-04-04 124229](https://github.com/user-attachments/assets/f413c114-09e0-4ca1-9bcc-c675071c4cd0)
+- ![Screenshot 2025-04-04 124304](https://github.com/user-attachments/assets/46d60212-45e9-4024-9374-dc8443939a50)
+![Screenshot 2025-04-04 124325](https://github.com/user-attachments/assets/28711304-6ffd-444a-9011-402fd432b4d5)
+
+
