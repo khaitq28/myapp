@@ -66,9 +66,16 @@ On the frontend side:
 
 - 10k messages are created at start time
 - 10k message created every 1 second
-- all messages are saved to DB almost immediately 
+- all messages are saved to DB almost immediately (some very small delays but it's acceptable for Users)
 - 5 thead for Thread Pool task
 - Interval of 1/10 second + Batch size of 1000 => can handle 10k message/s
+
+- Other way to simulate:
+  - run a service which send continoustly 1000 messages/100 ms (non stop) => 10k message/second:
+  -     http://localhost:8080/api/simulate2/start
+  - Stop simulate:
+  -     http://localhost:8080/api/simulate2/stop
+  - This way we can see the webapp receives contioustly new message
 
 ##  Follow-up: (to improve more if needed)
 - add DTO, unit test, integration tests
