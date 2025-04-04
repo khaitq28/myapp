@@ -73,7 +73,8 @@ On the frontend side:
 ##  Follow-up: (to improve more if needed)
 - add DTO, unit test, integration tests
 - use Index for createdAt column, (if we want to sort by createdAt date)
-- use cache for Partners data  (@Cacheable of Spring boot, or Redis if big scale application)
+- use cache for Partners data and/or Messages data (for old messages)  (@Cacheable of Spring boot, or Redis if big scale application)
+- use cache for Messages data (old messages) with criteria of search/sort 
 - Test with real IBM MQ, and use real DB like Postgres (faster and more stable than H2DB)
 - Monitoring to check the bottleneck of the system:
   - Thread pool size
