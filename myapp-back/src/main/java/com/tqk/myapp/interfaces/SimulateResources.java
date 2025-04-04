@@ -1,11 +1,14 @@
 package com.tqk.myapp.interfaces;
 
 import lombok.AllArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -25,7 +28,7 @@ public class SimulateResources {
         }
     }
 
-    @GetMapping(path = "/api/simulate")
+    @GetMapping(path = "/api/simulate", produces = MediaType.TEXT_PLAIN_VALUE)
     public String simulate() {
         long cur = System.currentTimeMillis();
         for(int i = 0; i< 10; i++) {
@@ -40,8 +43,16 @@ public class SimulateResources {
             }
         }
         long end = System.currentTimeMillis();
-        return "Simulate to push 50k messages during: " + (end - cur) + " ms";
+        messageList.add("Simulate to push 50k messages during: " + (end - cur) + " ms");
+
+        String summary = "You have simulated " + messageList.size() + " times : \n";
+        for (String message : messageList) {
+            summary += (message + "\n");
+        }
+        return summary;
     }
+
+    private List<String> messageList = new ArrayList<>();
 
 
     @GetMapping(path = "/home")
