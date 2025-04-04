@@ -73,9 +73,9 @@ On the frontend side:
 - Other way to simulate:
   - run a service which send continoustly 1000 messages/100 ms (non stop) => 10k message/second:
   -     http://localhost:8080/api/simulate2/start
+    While it's running, we can see the webapp receives contioustly new message
   - Stop simulate:
   -     http://localhost:8080/api/simulate2/stop
-  - This way we can see the webapp receives contioustly new message
 
 ##  Follow-up: (to improve more if needed)
 - add DTO, unit test, integration tests
