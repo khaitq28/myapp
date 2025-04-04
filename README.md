@@ -86,9 +86,10 @@ If the message from queue is VERY BIG, some other solutions can consider:
 - use multiple instances of app (scale auto) by K8S  to process messages
 
 ## Screen:
-![Screenshot 2025-04-04 124325](https://github.com/user-attachments/assets/e2042950-2f24-430a-a4fc-df9f84105036)
-![Screenshot 2025-04-04 124229](https://github.com/user-attachments/assets/f413c114-09e0-4ca1-9bcc-c675071c4cd0)
-- ![Screenshot 2025-04-04 124304](https://github.com/user-attachments/assets/46d60212-45e9-4024-9374-dc8443939a50)
-![Screenshot 2025-04-04 124325](https://github.com/user-attachments/assets/28711304-6ffd-444a-9011-402fd432b4d5)
+![Screenshot 2025-04-04 124229](https://github.com/user-attachments/assets/4bc09a94-8f35-4f50-8058-3910bc61bf00)
+- ![Screenshot 2025-04-04 124304](https://github.com/user-attachments/assets/270cb5e1-1d21-4a96-818f-b606543b4d2a)
+![Screenshot 2025-04-04 124325](https://github.com/user-attachments/assets/c195963b-2837-4fb6-b2b0-3c609abde44c)
+
+
 
 
