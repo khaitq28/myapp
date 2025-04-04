@@ -24,13 +24,13 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) {
 
-        List<Message> messageList = easyRandom.objects(String.class, 10000)
-                .map(m -> Message.builder()
-                        .content(m)
-                        .build())
-                .collect(Collectors.toList());
-
-        messageService.saveAll(messageList);
+//        List<Message> messageList = easyRandom.objects(String.class, 10000)
+//                .map(m -> Message.builder()
+//                        .content(m)
+//                        .build())
+//                .collect(Collectors.toList());
+//
+//        messageService.saveAll(messageList);
 
 
         List<Partner> partners = easyRandom.objects(Partner.class, 100)

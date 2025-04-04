@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  myapp-back:
+    build:
+      context: ./myapp-back
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost:8080/home"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+
+  myapp-front:
+    build:
+      context: ./myapp-front
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - myapp-back
+#        condition: service_healthy

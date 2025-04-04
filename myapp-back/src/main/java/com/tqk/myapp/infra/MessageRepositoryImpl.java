@@ -1,7 +1,9 @@
 package com.tqk.myapp.infra;
 
 import com.tqk.myapp.domain.Message;
-import com.tqk.myapp.domain.MessageRepository;
+import com.tqk.myapp.domain.repository.MessageRepository;
+import com.tqk.myapp.infra.persistance.MessageEntity;
+import com.tqk.myapp.infra.persistance.MessageJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

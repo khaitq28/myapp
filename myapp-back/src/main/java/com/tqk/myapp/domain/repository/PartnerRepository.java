@@ -1,5 +1,6 @@
-package com.tqk.myapp.domain;
+package com.tqk.myapp.domain.repository;
 
+import com.tqk.myapp.domain.Partner;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

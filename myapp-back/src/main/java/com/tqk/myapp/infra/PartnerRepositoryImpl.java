@@ -1,7 +1,9 @@
 package com.tqk.myapp.infra;
 
 import com.tqk.myapp.domain.Partner;
-import com.tqk.myapp.domain.PartnerRepository;
+import com.tqk.myapp.domain.repository.PartnerRepository;
+import com.tqk.myapp.infra.persistance.PartnerEntity;
+import com.tqk.myapp.infra.persistance.PartnerJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

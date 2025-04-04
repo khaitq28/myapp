@@ -20,7 +20,9 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 
   <tr mat-row *matRowDef="let row; columns: displayedColumns"
-      (click)="openMessageDetail(row)"></tr>
+      (click)="openMessageDetail(row)" [ngClass]="{'row-hover': row.hovered}"
+      (mouseenter)="row.hovered = true"
+      (mouseleave)="row.hovered = false"></tr>
 
 </table>
 

@@ -1,4 +1,4 @@
-package com.tqk.myapp.infra;
+package com.tqk.myapp.infra.persistance;
 
 
 import lombok.AllArgsConstructor;

@@ -1,7 +1,7 @@
 package com.tqk.myapp.application;
 
 import com.tqk.myapp.domain.Message;
-import com.tqk.myapp.domain.MessageRepository;
+import com.tqk.myapp.domain.repository.MessageRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

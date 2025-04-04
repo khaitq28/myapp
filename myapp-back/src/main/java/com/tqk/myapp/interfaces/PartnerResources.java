@@ -3,7 +3,6 @@ package com.tqk.myapp.interfaces;
 import com.tqk.myapp.application.PartnerService;
 import com.tqk.myapp.domain.Partner;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

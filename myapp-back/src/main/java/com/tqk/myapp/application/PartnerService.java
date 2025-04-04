@@ -1,7 +1,7 @@
 package com.tqk.myapp.application;
 
 import com.tqk.myapp.domain.Partner;
-import com.tqk.myapp.domain.PartnerRepository;
+import com.tqk.myapp.domain.repository.PartnerRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
