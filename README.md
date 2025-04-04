@@ -13,7 +13,7 @@
 - Download the repository
 - In the folder myapp which contains docker-compose.yml, run the command cmd (depends on the OS):
 
-      docker compose up
+      docker-compose up
 
 or by
 
