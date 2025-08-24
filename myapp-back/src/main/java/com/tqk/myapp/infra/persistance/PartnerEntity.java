@@ -1,14 +1,12 @@
 package com.tqk.myapp.infra.persistance;
 
 import com.tqk.myapp.domain.Direction;
-import com.tqk.myapp.domain.PartnerType;
 import com.tqk.myapp.domain.ProcessedFlowType;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
 
 
 @Entity

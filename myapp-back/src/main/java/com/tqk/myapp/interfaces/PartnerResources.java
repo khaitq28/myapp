@@ -2,6 +2,7 @@ package com.tqk.myapp.interfaces;
 
 import com.tqk.myapp.application.PartnerService;
 import com.tqk.myapp.domain.Partner;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -11,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 
 /**
  * @author Quang-Khai TRAN

@@ -38,14 +38,18 @@ management:
     health:
       show-details: always
 
-ibm:
-  mq:
-    host: IBM_MQ_SERVER
-    port: 1414
-    queue-manager: QM1
-    channel: DEV.APP.SVRCONN
-    user: admin
-    password: passw0rd
-    queue:
-      name: DEV.QUEUE.1
+#ibm:
+#  mq:
+#    host: IBM_MQ_SERVER
+#    port: 1414
+#    queue-manager: QM1
+#    channel: DEV.APP.SVRCONN
+#    user: admin
+#    password: passw0rd
+#    queue:
+#      name: DEV.QUEUE.1
 
+#
+#springdoc:
+#  swagger-ui:
+#    path: /swagger-ui.html
