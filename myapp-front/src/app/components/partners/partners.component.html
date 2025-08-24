@@ -110,8 +110,8 @@
     </mat-form-field><br>
   </mat-dialog-content>
 
-  <mat-dialog-actions align="end" *ngIf="mode!= 'view'">
-    <button mat-button (click)="dialogRef.close()">Cancel</button>
-    <button mat-raised-button color="primary" (click)="savePartner()">Add</button>
+  <mat-dialog-actions align="end" >
+    <button mat-button (click)="dialogRef.close()">Close</button>
+    <button mat-raised-button color="primary" (click)="savePartner()" *ngIf="mode!= 'view'">Add</button>
   </mat-dialog-actions>
 </ng-template>
