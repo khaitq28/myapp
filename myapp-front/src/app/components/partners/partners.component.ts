@@ -48,6 +48,8 @@ export class PartnersComponent {
   pageSize = 10;
   pageIndex = 0;
 
+  mode: 'create' | 'view' = 'create';
+
   @ViewChild('addPartnerDialog') addPartnerDialog!: TemplateRef<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   addPartnerForm!: FormGroup;
@@ -106,6 +108,9 @@ export class PartnersComponent {
   }
 
   openAddDialog() {
+    this.mode = 'create';
+    this.addPartnerForm.reset();
+    this.addPartnerForm.enable();
     this.dialog.open(this.addPartnerDialog);
   }
 
@@ -120,5 +125,12 @@ export class PartnersComponent {
       this.dialog.closeAll();
       this.addPartnerForm.reset();
     });
+  }
+
+  openPatternDetail(partner: Partner) {
+    this.mode = 'view';
+    this.addPartnerForm.patchValue(partner);
+    this.addPartnerForm.disable();
+    this.dialog.open(this.addPartnerDialog);
   }
 }
