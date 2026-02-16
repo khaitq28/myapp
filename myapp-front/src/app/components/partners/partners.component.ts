@@ -1,4 +1,4 @@
-import {Component, TemplateRef, ViewChild} from '@angular/core';
+import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {
   MatTableDataSource, MatTableModule
 } from "@angular/material/table";
@@ -38,7 +38,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
   templateUrl: './partners.component.html',
   styleUrl: './partners.component.scss'
 })
-export class PartnersComponent {
+export class PartnersComponent implements OnInit {
 
   partners: Partner[] = [];
   displayedColumns: string[] = [ 'alias', 'type', 'direction', 'application',  'processedFlowType', 'description', 'actions'];
