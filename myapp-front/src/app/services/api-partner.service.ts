@@ -6,11 +6,10 @@ import {environment} from "../../environments/environment";
 
 @Injectable({providedIn: 'root'})
 export class ApiPartnerService {
-  constructor(private http: HttpClient) { }
-  // private baseUrl = 'http://localhost:8080/api';
-  private baseUrl =  environment.apiUrl;
+  constructor(private readonly http: HttpClient) { }
+  private readonly baseUrl =  environment.apiUrl;
 
-  getPartners(page: number, size: number): Observable<any> {
+  getPartners(page: number, size: number): Observable<Partner> {
     let params = new HttpParams()
       .set('page', page.toString())
       .set('size', size.toString());

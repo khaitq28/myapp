@@ -54,9 +54,9 @@ export class PartnersComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   addPartnerForm!: FormGroup;
 
-  constructor(private api: ApiPartnerService,
-              private fb: FormBuilder,
-              private dialog: MatDialog) {
+  constructor(private readonly api: ApiPartnerService,
+              private readonly fb: FormBuilder,
+              private readonly dialog: MatDialog) {
   }
 
   ngOnInit() {
